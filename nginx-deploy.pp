@@ -12,7 +12,7 @@ node puppet-node-2{
   # Create "index.html" file with "hello world" content
   file { '/var/www/html/web-example/index.html':
     ensure  => 'file',
-    content => template('example-web/index.html.erb'),
+    content => template('/etc/puppetlabs/code/environments/nginx/modules/example-web'),
     mode    => '0644',
   }
 
