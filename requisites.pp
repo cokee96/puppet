@@ -1,13 +1,15 @@
-# Define the packages to install
-$packages = ['httpd', 'git', 'python3', 'python3-pip', 'nodejs', 'npm', 'mysql-server']
+node puppet-node-2{
+  # Define the packages to install
+  $packages = ['httpd', 'git', 'python3', 'python3-pip', 'nodejs', 'npm', 'mysql-server']
 
-# Install the packages
-package { $packages:
-  ensure => 'installed',
-}
+  # Install the packages
+  package { $packages:
+    ensure => 'installed',
+  }
 
-# Start and enable services
-service { ['httpd', 'nodejs', 'npm', 'mysql-server']:
-  ensure => 'running',
-  enable => true,
+  # Start and enable services
+  service { ['httpd', 'nodejs', 'npm', 'mysql-server']:
+    ensure => 'running',
+    enable => true,
+  }
 }
