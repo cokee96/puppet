@@ -24,11 +24,11 @@ node puppet-node-2{
   }
 
   # Declare correct path for the web
-  file_line { 'nginx_web_root':
-    path  => '/etc/nginx/nginx.conf',
-    line  => '       root         /var/www/html/;',
-    match => '^(\s*root\s+/usr/share/nginx/html;)',
-  }
+  # file_line { 'nginx_web_root':
+  #   path  => '/etc/nginx/nginx.conf',
+  #   line  => '       root         /var/www/html/;',
+  #   match => '^(\s*root\s+/usr/share/nginx/html;)',
+  # }
 
   # Restart Nginx
   service { 'nginx':
