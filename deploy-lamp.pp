@@ -95,7 +95,7 @@ node puppet-node-3{
   # Copy database dump file
   file { '/tmp/nodes_email.sql.':
     ensure => 'file',
-    content => template('/etc/puppetlabs/code/environments/deploy-lamp/modules/sql_database/nodes_email.sql.erb'),
+    content => template('/etc/puppetlabs/code/environments/deploylamp/modules/sql_database/nodes_email.sql.erb'),
     mode   => '0644',
   }
 
