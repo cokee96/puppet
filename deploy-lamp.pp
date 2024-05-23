@@ -35,6 +35,9 @@ node puppet-node-2{
 
 
 node puppet-node-3{
+  $dbname = 'noeds_email'
+  $dbuser = 'coke'
+  $upassword = '658078381'
   # Install MariaDB package
   package { ['mariadb-server', 'MySQL-python']:
     ensure => 'installed',
@@ -87,15 +90,16 @@ node puppet-node-3{
   }
 
   # Copy database dump file
-  file { '/tmp/nodes_email.sql.j2':
+  file { '/tmp/nodes_email.sql.':
     ensure => 'file',
+    content => template('/etc/puppetlabs/code/environments/deploy-lamp/modules/sql_database/nodes_email.sql.erb'),
     mode   => '0644',
   }
 
   # Restore database
   exec { 'restore_database':
-    command  => "/usr/bin/mysql -h localhost -u root -p'${root_password}' '${dbname}' < /tmp/nodes_email.sql.j2",
+    command  => "/usr/bin/mysql -h localhost -u root -p'${root_password}' '${dbname}' < /tmp/nodes_email.sql",
     unless   => "/usr/bin/mysql -h localhost -u root -p'${root_password}' '${dbname}' -e 'SHOW TABLES' | grep 'ERROR'",
-    require  => File['/tmp/nodes_email.sql.j2'],
+    require  => File['/tmp/nodes_email.sql.'],
   }
 }
