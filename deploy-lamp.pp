@@ -28,7 +28,7 @@ node puppet-node-2{
 
   exec { 'clone_repository':
     command => "/usr/bin/git clone ${automation_repository} /var/www/html/",
-    creates => '/var/www/html/.git',
+    creates => '/var/www/html/',
     require => Package['git'],
   }
 }
