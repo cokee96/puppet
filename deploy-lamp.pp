@@ -103,6 +103,6 @@ node puppet-node-3{
   exec { 'restore_database':
     command  => "/usr/bin/mysql -h localhost -u '${dbuser}' -p'${upassword}' '${dbname}' < /tmp/nodes_email.sql",
     unless   => "/usr/bin/mysql -h localhost -u '${dbuser}' -p'${upassword}' '${dbname}' -e 'SHOW TABLES' | grep 'ERROR'",
-    require  => File['/tmp/nodes_email.sql.'],
+    require  => File['/tmp/nodes_email.sql'],
   }
 }
