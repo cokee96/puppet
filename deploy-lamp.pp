@@ -78,16 +78,19 @@ node puppet-node-3{
 
   # Create Application Database
   mysql::db { "${dbname}":
-    ensure => 'present',
+    user     => "${dbuser}",
+    password => "${upassword}",
+    grant    => ['SELECT', 'UPDATE'],
+    host     => 'localhost'
   }
 
-  # Create Application DB User
-  mysql::user { "${dbuser}@%":
-    ensure   => 'present',
-    password => "${upassword}",
-    priv     => '*.*:ALL',
-    require  => Mysql::Db["${dbname}"],
-  }
+  # # Create Application DB User
+  # mysql::user { "${dbuser}@%":
+  #   ensure   => 'present',
+  #   password => "${upassword}",
+  #   priv     => '*.*:ALL',
+  #   require  => Mysql::Db["${dbname}"],
+  # }
 
   # Copy database dump file
   file { '/tmp/nodes_email.sql.':
