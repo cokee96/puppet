@@ -26,11 +26,11 @@ node puppet-node-2{
     ensure => 'directory',
   }
 
-  # exec { 'clone_repository':
-  #   command => "/usr/bin/git clone ${automation_repository} /var/www/html/",
-  #   creates => '/var/www/html/',
-  #   require => Package['git'],
-  # }
+  exec { 'clone_repository':
+    command => "/usr/bin/git clone ${automation_repository} /var/www/html/",
+    creates => '/var/www/html/',
+    require => Package['git'],
+  }
 }
 
 
