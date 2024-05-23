@@ -71,10 +71,10 @@ node puppet-node-3{
   }
 
   # Start MariaDB Service
-  service { 'mariadb':
-    ensure => 'running',
-    enable => true,
-  }
+  # service { 'mariadb':
+  #   ensure => 'running',
+  #   enable => true,
+  # }
 
   # Create Application Database
   mysql::db { "${dbname}":
