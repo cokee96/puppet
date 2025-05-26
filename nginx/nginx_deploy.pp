@@ -1,22 +1,22 @@
 class nginx_deploy {
 
   package { 'nginx':
-    ensure => 'installed',
+    ensure => installed,
   }
 
   file { '/var/www/html/web-example':
-    ensure => 'directory',
+    ensure => directory,
     mode   => '0755',
   }
 
   file { '/var/www/html/web-example/index.html':
-    ensure  => 'file',
-    content => template('/etc/puppetlabs/code/environments/nginx/modules/example-web/index.html.erb'),
+    ensure  => file,
+    content => template('example_web/index.html.erb'),  # Apunta a templates/index.html.erb
     mode    => '0644',
   }
 
   file { '/var/www/html/index.html':
-    ensure => 'file',
+    ensure => file,
     source => '/var/www/html/web-example/index.html',
     mode   => '0644',
   }
@@ -28,9 +28,8 @@ class nginx_deploy {
   }
 
   service { 'nginx':
-    ensure  => 'running',
+    ensure  => running,
     enable  => true,
     require => File['/var/www/html/index.html'],
   }
-
 }

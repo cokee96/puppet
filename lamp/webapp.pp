@@ -1,4 +1,4 @@
-class webapp {
+class webserver {
   $automation_repository = 'https://github.com/cokee96/automation-web-page.git'
 
   package { ['httpd', 'php', 'php-mysql', 'git']:
@@ -15,7 +15,7 @@ class webapp {
   }
 
   file { '/var/www/html/':
-    ensure => 'directory',
+    ensure => directory,
   }
 
   exec { 'clone_repository':
