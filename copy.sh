@@ -11,12 +11,12 @@ cp "$LOCAL_BASE/lamp/webapp.pp" "$PUPPET_ENV_DIR/deploylamp/modules/database/man
 cp "$LOCAL_BASE/lamp/site.pp" "$PUPPET_ENV_DIR/deploylamp/modules/database/manifests/"
 cp "$LOCAL_BASE/lamp/nodes_email.sql.erb" "$PUPPET_ENV_DIR/deploylamp/modules/database/templates/"
 
-# nginxn / example_web
-mkdir -p "$PUPPET_ENV_DIR/nginxn/modules/example_web/manifests"
-mkdir -p "$PUPPET_ENV_DIR/nginxn/modules/example_web/templates"
-cp "$LOCAL_BASE/nginx/nginx-deploy.pp" "$PUPPET_ENV_DIR/nginxn/modules/example_web/manifests/"
-cp "$LOCAL_BASE/nginx/site.pp" "$PUPPET_ENV_DIR/nginxn/modules/example_web/manifests/"
-cp "$LOCAL_BASE/nginx/index.html.erb" "$PUPPET_ENV_DIR/nginxn/modules/example_web/templates/"
+# nginx / example_web
+mkdir -p "$PUPPET_ENV_DIR/nginx/modules/example_web/manifests"
+mkdir -p "$PUPPET_ENV_DIR/nginx/modules/example_web/templates"
+cp "$LOCAL_BASE/nginx/nginx-deploy.pp" "$PUPPET_ENV_DIR/nginx/modules/example_web/manifests/"
+cp "$LOCAL_BASE/nginx/site.pp" "$PUPPET_ENV_DIR/nginx/modules/example_web/manifests/"
+cp "$LOCAL_BASE/nginx/index.html.erb" "$PUPPET_ENV_DIR/nginx/modules/example_web/templates/"
 
 # requisites
 mkdir -p "$PUPPET_ENV_DIR/requisites/modules/requisites/manifests"
