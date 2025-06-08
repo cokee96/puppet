@@ -1,6 +1,6 @@
 import 'nginx_deploy.pp'
 
-node 'puppet-node-2' {
+node 'puppet-node', 'puppet-node-2','puppet-node-3','puppet-node-4' {
   include nginx_deploy
 }
 
