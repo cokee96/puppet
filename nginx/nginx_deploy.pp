@@ -1,4 +1,4 @@
-class nginx_deploy {
+class example_web::nginx_deploy {
 
   package { 'nginx':
     ensure => installed,
