@@ -1,6 +1,6 @@
 # Carga las clases definidas en los otros archivos del mismo directorio
-import 'webapp.pp'
-import 'database.pp'
+# import 'webapp.pp'
+# import 'database.pp'
 
 node 'puppet-node-2' {
   include webserver
