@@ -13,7 +13,7 @@ cp "$LOCAL_BASE/lamp/site.pp" "$PUPPET_ENV_DIR/deploylamp/manifests/"
 
 # clases y plantillas al módulo
 cp "$LOCAL_BASE/lamp/db.pp" "$PUPPET_ENV_DIR/deploylamp/modules/lamp/manifests/"
-cp "$LOCAL_BASE/lamp/webapp.pp" "$PUPPET_ENV_DIR/deploylamp/modules/lamp/manifests/"
+cp "$LOCAL_BASE/lamp/webser.pp" "$PUPPET_ENV_DIR/deploylamp/modules/lamp/manifests/"
 cp "$LOCAL_BASE/lamp/nodes_email.sql.erb" "$PUPPET_ENV_DIR/deploylamp/modules/lamp/templates/"
 
 # nginx / example_web
