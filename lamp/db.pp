@@ -3,10 +3,23 @@ class lamp::db {
   $dbuser = 'coke'
   $upassword = '658078381'
 
-  include mysql::server  # Instala y arranca MySQL/MariaDB
+  include mysql::server
 
   selboolean { 'mysql_connect_any':
     value => 'on',
+  }
+
+  file_line { 'mariadb_bind_address':
+    path  => '/etc/my.cnf.d/mariadb-server.cnf',
+    line  => 'bind-address = 0.0.0.0',
+    match => '^bind-address\s*=.*',
+    notify => Service['mysqld'],
+  }
+
+  service { 'mysqld':
+    ensure => running,
+    enable => true,
+    require => Class['mysql::server'],
   }
 
   mysql::db { $dbname:
