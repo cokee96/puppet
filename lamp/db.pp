@@ -19,7 +19,7 @@ class lamp::db {
 
   file { '/tmp/nodes_email.sql':
     ensure  => file,
-    content => template('db/nodes_email.sql.erb'), 
+    content => template('lamp/nodes_email.sql.erb'), 
     mode    => '0644',
   }
 
