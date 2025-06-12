@@ -13,7 +13,7 @@ class lamp::db {
     user     => $dbuser,
     password => $upassword,
     host     => 'localhost',
-    grant    => ['SELECT', 'UPDATE'],
+    grant    => ['ALL'],
     require  => Class['mysql::server'],
   }
 
