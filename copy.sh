@@ -5,16 +5,16 @@ PUPPET_ENV_DIR="/etc/puppetlabs/code/environments"
 
 # deploylamp / database
 mkdir -p "$PUPPET_ENV_DIR/deploylamp/manifests"
-mkdir -p "$PUPPET_ENV_DIR/deploylamp/modules/database/manifests"
-mkdir -p "$PUPPET_ENV_DIR/deploylamp/modules/database/templates"
+mkdir -p "$PUPPET_ENV_DIR/deploylamp/modules/lamp/manifests"
+mkdir -p "$PUPPET_ENV_DIR/deploylamp/modules/lamp/templates"
 
 # site.pp va al entorno
 cp "$LOCAL_BASE/lamp/site.pp" "$PUPPET_ENV_DIR/deploylamp/manifests/"
 
 # clases y plantillas al módulo
-cp "$LOCAL_BASE/lamp/database.pp" "$PUPPET_ENV_DIR/deploylamp/modules/database/manifests/"
-cp "$LOCAL_BASE/lamp/webapp.pp" "$PUPPET_ENV_DIR/deploylamp/modules/database/manifests/"
-cp "$LOCAL_BASE/lamp/nodes_email.sql.erb" "$PUPPET_ENV_DIR/deploylamp/modules/database/templates/"
+cp "$LOCAL_BASE/lamp/database.pp" "$PUPPET_ENV_DIR/deploylamp/modules/lamp/manifests/"
+cp "$LOCAL_BASE/lamp/webapp.pp" "$PUPPET_ENV_DIR/deploylamp/modules/lamp/manifests/"
+cp "$LOCAL_BASE/lamp/nodes_email.sql.erb" "$PUPPET_ENV_DIR/deploylamp/modules/lamp/templates/"
 
 # nginx / example_web
 mkdir -p "$PUPPET_ENV_DIR/nginx/manifests"

@@ -3,11 +3,11 @@
 # import 'database.pp'
 
 node 'puppet-node-2' {
-  include database::webserver
+  include lamp::webserver
 }
 
 node 'puppet-node-3' {
-  include database::db
+  include lamp::db
 }
 
 node default {
