@@ -7,7 +7,7 @@ node 'puppet-node-2' {
 }
 
 node 'puppet-node-3' {
-  include database::database
+  include database::db
 }
 
 node default {
