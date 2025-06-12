@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCAL_BASE="./puppet"
+LOCAL_BASE="./"
 PUPPET_ENV_DIR="/etc/puppetlabs/code/environments"
 
 # deploylamp / database
