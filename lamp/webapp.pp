@@ -1,4 +1,4 @@
-class webserver {
+class lamp::webserver {
   $automation_repository = 'https://github.com/cokee96/automation-web-page.git'
 
   package { ['httpd', 'php', 'php-mysql', 'git']:
