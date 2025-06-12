@@ -1,4 +1,4 @@
-class database {
+class lamp::db {
   $dbname = 'nodes_email'
   $dbuser = 'coke'
   $upassword = '658078381'
@@ -19,7 +19,7 @@ class database {
 
   file { '/tmp/nodes_email.sql':
     ensure  => file,
-    content => template('database/nodes_email.sql.erb'), 
+    content => template('db/nodes_email.sql.erb'), 
     mode    => '0644',
   }
 
