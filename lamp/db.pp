@@ -1,5 +1,5 @@
 class lamp::db {
-  $dbname = 'noeds_email'
+  $dbname = 'nodes_email'
   $dbuser = 'coke'
   $upassword = '658078381'
 
