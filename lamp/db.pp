@@ -10,11 +10,12 @@ class lamp::db {
   }
 
   file_line { 'mariadb_bind_address':
-    path   => '/etc/my.cnf.d/mariadb-server.cnf',
-    line   => 'bind-address = 0.0.0.0',
-    match  => '^bind-address\s*=.*',
+    path  => '/etc/my.cnf.d/server.cnf',
+    line  => 'bind-address = 0.0.0.0',
+    match => '^bind-address\s*=.*',
     notify => Service['mysqld'],
   }
+
 
   mysql::db { $dbname:
     user     => $dbuser,
