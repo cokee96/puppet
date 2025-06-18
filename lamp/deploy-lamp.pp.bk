@@ -35,7 +35,7 @@ node puppet-node-2{
 
 
 node puppet-node-3{
-  $dbname = 'noeds_email'
+  $dbname = 'nodes_email'
   $dbuser = 'coke'
   $upassword = '658078381'
   # Install MariaDB package
