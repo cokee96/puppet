@@ -2,11 +2,11 @@
 # import 'webapp.pp'
 # import 'database.pp'
 
-node 'puppet-node-2' {
+node 'puppet-node-2.home' {
   include lamp::webserver
 }
 
-node 'puppet-node-3' {
+node 'puppet-node-3.home' {
   include lamp::db
 }
 
