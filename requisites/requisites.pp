@@ -1,4 +1,4 @@
-class requisites {
+class requisites::requisites {
   # Define the packages to install
   $packages = ['httpd', 'git', 'python3', 'python3-pip', 'nodejs', 'npm']
 
