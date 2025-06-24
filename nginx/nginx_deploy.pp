@@ -4,10 +4,16 @@ class example_web::nginx_deploy {
     ensure => installed,
   }
 
-  file { '/var/www/html':
+  file { '/var/www':
     ensure => directory,
     mode   => '0755',
   }
+
+  file { '/var/www/html':
+    ensure  => directory,
+    mode    => '0755',
+    require => File['/var/www'],
+  } 
 
   file { '/var/www/html/web-example':
     ensure  => directory,
